@@ -1,0 +1,57 @@
+import 'package:flutter/material.dart';
+
+import 'package:flutter_acne/shared/theme.dart';
+import 'package:flutter_acne/shared/size_config.dart';
+
+class ProfileInfoWidget extends StatelessWidget {
+  // ignore: prefer_const_constructors_in_immutables
+  ProfileInfoWidget({
+    Key? key,
+    required this.name,
+    required this.info,
+    required this.image,
+  }) : super(key: key);
+  final String image;
+  final String name;
+  final String info;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(
+        top: getProportionateScreenHeight(50),
+      ),
+      child: Column(
+        children: [
+          Container(
+            margin: EdgeInsets.only(
+              bottom: getProportionateScreenHeight(20),
+            ),
+            height: getProportionateScreenHeight(145),
+            width: getProportionateScreenWidth(145),
+            decoration: BoxDecoration(
+              color: Color(0xffD9D9D9),
+              shape: BoxShape.circle,
+              image:
+                  DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
+            ),
+          ),
+          Text(
+            name,
+            style: opensansTextStyle.copyWith(
+              fontSize: 20,
+              fontWeight: weightBold,
+            ),
+          ),
+          Text(
+            info,
+            style: opensansTextStyle.copyWith(
+              fontSize: 10,
+              fontWeight: weightBold,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
