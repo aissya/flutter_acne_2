@@ -5,7 +5,10 @@ import 'package:image_picker/image_picker.dart';
 import 'package:flutter_acne/shared/theme.dart';
 import 'package:flutter_acne/shared/size_config.dart';
 //import 'package:flutter_acne/ui/pages/preview_scan_page.dart';
+//import 'package:flutter_acne/ui/pages/loading_page.dart';
+import 'package:flutter_acne/ui/pages/TfliteModel.dart';
 import 'package:flutter_acne/ui/widgets/article_home_tile.dart';
+//import 'package:tflite/tflite.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -30,15 +33,15 @@ class _HomePageState extends State<HomePage> {
         } else {
           state = 1;
         }
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (contex) => PreviewScan(
-        //       image: image,
-        //       state: state,
-        //     ),
-        //   ),
-        // );
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (contex) => TfliteModel(
+              image: image,
+              state: state,
+            ),
+          ),
+        );
       } else {
         print('No image selected.');
       }
@@ -87,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Lie Skin',
+                        'Mooi Skin',
                         style: aclonicaTextStyle.copyWith(
                           fontSize: 30,
                           fontWeight: weightBold,
@@ -98,6 +101,7 @@ class _HomePageState extends State<HomePage> {
                         '"Acne may show up, \n but it doesnt define \n who you really are."',
                         style: aclonicaTextStyle.copyWith(
                           fontSize: 15,
+                          height: 1.3,
                           fontWeight: weightBold,
                           color: greenColor,
                         ),
@@ -117,7 +121,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Container(
               width: double.infinity,
-              height: getProportionateScreenHeight(492),
+              height: getProportionateScreenHeight(700),
               decoration: const BoxDecoration(
                 color: whiteColor,
                 borderRadius: BorderRadius.only(
@@ -207,7 +211,25 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         SizedBox(
-                          height: getProportionateScreenHeight(25),
+                          height: getProportionateScreenHeight(30),
+                        ),
+                        Container(
+                          width: double.infinity,
+                          height: 200,
+                          margin: EdgeInsets.only(
+                            left: getProportionateScreenWidth(30),
+                            right: getProportionateScreenWidth(30),
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(28),
+                            image: const DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage('assets/bg_penggunaan.png'),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: getProportionateScreenHeight(30),
                         ),
                         SingleChildScrollView(
                           physics: BouncingScrollPhysics(),
@@ -217,26 +239,26 @@ class _HomePageState extends State<HomePage> {
                               SizedBox(
                                 width: getProportionateScreenWidth(26),
                               ),
-                              // ArticleHomeTile(
-                              //   id: 0,
-                              //   image: 'assets/home_jerawat.png',
-                              // ),
-                              // ArticleHomeTile(
-                              //   id: 1,
-                              //   image: 'assets/home_kudis.png',
-                              // ),
-                              // ArticleHomeTile(
-                              //   id: 2,
-                              //   image: 'assets/home_kutil.png',
-                              // ),
-                              // ArticleHomeTile(
-                              //   id: 3,
-                              //   image: 'assets/home_kurap.png',
-                              // ),
-                              // ArticleHomeTile(
-                              //   id: 4,
-                              //   image: 'assets/home_dermatitis.png',
-                              // ),
+                              ArticleHomeTile(
+                                id: 0,
+                                image: 'assets/icon_home.png',
+                              ),
+                              ArticleHomeTile(
+                                id: 1,
+                                image: 'assets/icon_home.png',
+                              ),
+                              ArticleHomeTile(
+                                id: 2,
+                                image: 'assets/icon_home.png',
+                              ),
+                              ArticleHomeTile(
+                                id: 3,
+                                image: 'assets/icon_home.png',
+                              ),
+                              ArticleHomeTile(
+                                id: 4,
+                                image: 'assets/icon_home.png',
+                              ),
                             ],
                           ),
                         ),

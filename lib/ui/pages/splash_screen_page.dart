@@ -64,7 +64,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
                     width: getProportionateScreenWidth(270),
                   ),
                   Text(
-                    'Lie Skin',
+                    'Mooi Skin',
                     style: aclonicaTextStyle.copyWith(
                       fontSize: 65,
                       fontWeight: weightBold,

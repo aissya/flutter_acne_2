@@ -50,33 +50,33 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           ),
           Container(
             margin: EdgeInsets.only(
-              top: getProportionateScreenHeight(28),
-              left: getProportionateScreenWidth(47),
-              right: getProportionateScreenWidth(63),
+              top: getProportionateScreenHeight(5),
+              left: getProportionateScreenWidth(50),
+              right: getProportionateScreenWidth(50),
             ),
-            // width: getProportionateScreenWidth(285),
-            // child: Image.asset('assets/onboarding4_title.png'),
-            child: Text(
-              '"Lorem"',
-              style: opensansTextStyle.copyWith(
-                height: 0.89,
-                fontWeight: weightBold,
-                fontSize: 40,
-                color: greenColor,
-              ),
-            ),
+            // child: Text(
+            //   '"A canvas for confidence and natural beauty."',
+            //   textAlign: TextAlign.center,
+            //   style: aclonicaTextStyle.copyWith(
+            //     height: 0.89,
+            //     fontWeight: weightBold,
+            //     fontSize: 16,
+            //     color: pinkColor,
+            //   ),
+            // ),
           ),
           Container(
             margin: EdgeInsets.only(
-                top: getProportionateScreenHeight(29),
-                left: getProportionateScreenWidth(47),
-                right: getProportionateScreenWidth(63)),
+                top: getProportionateScreenHeight(30),
+                left: getProportionateScreenWidth(30),
+                right: getProportionateScreenWidth(30)),
             child: Text(
-              'Mulailah perjalananmu menuju kulit wajah impian bebas jerawat dengan bantuan aplikasi Lie Skin.',
-              style: opensansTextStyle.copyWith(
-                height: 0.89,
+              'Mulailah perjalananmu menuju kulit wajah impian bebas jerawat dengan aplikasi Mooi Skin.',
+              textAlign: TextAlign.center,
+              style: aclonicaTextStyle.copyWith(
+                height: 1.5,
                 fontWeight: weightBold,
-                fontSize: 20,
+                fontSize: 25,
                 color: greenColor,
               ),
             ),
@@ -143,11 +143,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       child: Text(
                         //text tiap page
                         _currentPage == 0
-                            ? 'Temukan kandungan produk perawatan kulit yang sesuai dengan kondisi kulit wajahmu.'
+                            ? 'Jangan biarkan jerawat menghalangimu tampil percaya diri. Temukan solusinya dengan aplikasi Mooi Skin.'
                             : _currentPage == 1
-                                ? 'Scan kulit kamu untuk mengetahui jenis perawatan yang tepat.'
+                                ? 'Scan dan unggah gambar kulit wajah kamu, untuk mendapatkan rekomendasi perawatan kulit wajah yang tepat'
                                 : _currentPage == 2
-                                    ? 'Gapunya banyak waktu? Hemat waktumu bersama Lie Skin.'
+                                    ? 'Siap untuk memiliki kulit wajah yang sehat dan bebas jerawat?'
                                     : '',
                         style: aclonicaTextStyle.copyWith(
                           color: whiteColor,
