@@ -32,24 +32,20 @@ class _ResultPageState extends State<ResultPage> {
         automaticallyImplyLeading: false,
         shadowColor: Colors.transparent,
         elevation: 0,
-        backgroundColor: whiteColor,
-        toolbarHeight: getProportionateScreenHeight(60),
+        backgroundColor: bgColor,
+        toolbarHeight: getProportionateScreenHeight(50),
         centerTitle: true,
         flexibleSpace: Container(
-          padding: EdgeInsets.only(top: getProportionateScreenHeight(23)),
+          padding: EdgeInsets.only(top: getProportionateScreenHeight(20)),
           width: double.infinity,
           decoration: const BoxDecoration(
-            color: blueColor,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
-            ),
+            color: pinkColor,
           ),
           child: Stack(
             children: [
               Center(
                 child: Text(
-                  'Result',
+                  'Diagnose',
                   style: aclonicaTextStyle.copyWith(
                     fontSize: getProportionateScreenWidth(20),
                     fontWeight: weightBold,
@@ -64,7 +60,7 @@ class _ResultPageState extends State<ResultPage> {
                   onTap: (() => Navigator.pushNamedAndRemoveUntil(
                       context, '/main', (route) => false)),
                   child: Text(
-                    'Done',
+                    'Selesai',
                     style: aclonicaTextStyle.copyWith(
                       fontSize: 16,
                       fontWeight: weightBold,
@@ -89,85 +85,65 @@ class _ResultPageState extends State<ResultPage> {
             ? DetailResultPage(
                 image: widget.image,
                 sDetail:
-                    'blackhead Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                    'Blackhead atau komedo hitam adalah tonjolan kecil berwarna gelap di kulit akibat tersumbatnya pori-pori.',
                 lDetail:
-                    'blackhead Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem',
+                    'Blackhead atau komedo hitam adalah tonjolan kecil berwarna gelap di kulit akibat tersumbatnya pori-pori. Blackhead umumnya muncul di wajah, tetapi bisa juga ditemukan di bagian tubuh lainnya, seperti punggung, dada, leher, bahu, dan tangan. Blackhead umumnya tidak menyebabkan nyeri layaknya jerawat dan mudah sekali terlihat di permukaan kulit karena warnanya yang gelap. Oleh sebab itu, jika tumbuh pada wajah, blackhead mungkin bisa mengganggu penampilan.',
                 penyakit: 'blackhead',
+                penyebab:
+                    '\n1.Iritasi pada folikel rambut. \n2.Produksi minyak yang berlebih. \n3. Penumpukan bakteri Propionibacterium acnes di kulit. \n4.Perubahan hormon, misalnya saat menstruasi atau akibat mengonsumsi pil KB maupun obat-obatan tertentu',
                 tips:
-                    'Beberapa upaya yang dapat dilakukan untuk mencegah jerawat yaitu\n\n1. Membersihkan riasan wajah sebelum tidur.\n2. Mengelola stres dengan baik\n3. Menghindari penggunaan pakaian yang terlalu ketat.\n4. Menjaga kebersihan tubuh dengan selalu mandi setelah beraktivitas.\n5. Menghindari memencet dan memegang jerawat, karena dapat memicu jerawat bertambah banyak.\n6. Menjaga kebersihan wajah dengan membersihkan wajah dua kali dalam sehari, untuk mengangkat sel-sel kulit mati, minyak yang berlebihan, serta sisa kosmetik di permukaan kulit.',
-                medicine: [
-                  'assets/obat_jerawat1.png',
-                  'assets/obat_jerawat2.png',
-                  'assets/obat_jerawat3.png',
-                  'assets/obat_jerawat4.png'
-                ],
+                    '\n1.Pilih produk perawatan kulit dengan asam salisilat (salicylic acid) untuk mengatasi blackhead dan membersihkan kulit. \n2.Gunakan krim atau losion retinoid untuk mengatasi blackhead dan meremajakan kulit. Gunakan produk ini sebelum tidur untuk hasil optimal. \n3.Melakukan chemical peeling menggunakan bahan seperti asam salisilat, asam glikolat, atau asam retinoat untuk menghilangkan blackhead dan meremajakan kulit dengan pengelupasan lapisan atas kulit. \n4.Terapi laser menggunakan laser untuk mengurangi produksi minyak dan membunuh bakteri pada kulit, tanpa merusak lapisan kulit atas.',
               )
             : (widget.pred![0]['label'] == label[1])
                 ? DetailResultPage(
                     image: widget.image,
                     sDetail:
-                        'nodules Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                        'Jerawat nodul adalah jenis jerawat meradang yang terbentuk di lapisan bawah kulit.',
                     lDetail:
-                        'nodules Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem',
+                        'Jerawat nodul adalah jenis jerawat meradang yang terbentuk di lapisan bawah kulit. Jerawat ini umumnya lebih besar, lebih menyakitkan, dan lebih sulit dihilangkan daripada jenis jerawat lainnya. Penanganan langsung oleh dokter dapat membantu mengurangi risiko terjadinya bekas jerawat di kemudian hari.',
                     penyakit: 'nodules',
+                    penyebab:
+                        '\n1.Keringat berlebih, seperti pada penderita hiperhidrosis. \n2.Memakai kosmetik atau produk perawatan kulit yang menyumbat pori-pori, seperti yang berbahan dasar minyak. \n3.Memiliki anggota keluarga yang juga mudah mengalami jerawat nodul. \n4.Mengalami perubahan hormon seperti saat pubertas, menstruasi, hamil, dan menopause. \n5.Mengonsumsi jenis obat-obatan tertentu, seperti obat kortikosteroid. \n6.Mengalami sres atau kecemasan.',
                     tips:
-                        'Ada beberapa cara yang bisa dilakukan untuk mencegah infestasi ulang dan mencegah penyebaran penyakit ini pada orang lain, yaitu:\n\n1. Membersihkan pakaian dengan benar. Gunakan air sabun panas untuk mencuci semua pakaian, handuk, dan seprai yang digunakan dalam waktu tiga hari sebelum perawatan dilakukan. Keringkan pakaian tersebut dengan panas tinggi.\n\n2. Pisahkan barang yang tidak bisa dicuci. Cobalah untuk memisahkan barang-barang yang tidak dapat dicuci ke dalam kantong plastik tertutup dan letakkan di tempat yang terpisah, seperti garasi. Diamkan selama beberapa minggu agar tungau mati setelah beberapa hari tidak mendapatkan makanan.',
-                    medicine: [
-                      'assets/obat_kudis1.png',
-                      'assets/obat_kudis2.png',
-                      'assets/obat_kudis3.png',
-                      'assets/obat_kudis4.png'
-                    ],
+                        'Untuk mengatasi jerawat nodul, Anda memerlukan penanganan medis dari dokter kulit. Berikut adalah jenis pengobatan yang dapat diberikan oleh dokter: \n\n1.Salep jerawat dokter mengandung asam salisilat, benzoil peroksida, retinoid, dan antibiotik. \n2.Jerawat nodul yang meluas diobati dengan antibiotik untuk mengurangi bakteri P. acne dan peradangan. Contoh antibiotik yang diresepkan adalah doxycycline, erythromycin, dan minocycline. \n3.Pil KB efektif untuk mengobati jerawat nodul yang terkait dengan perubahan hormon sebelum menstruasi. Hormon sintetis dalam pil KB mengurangi produksi minyak kulit, mengurangi risiko jerawat nodul. \n4.Isotretinoin, obat oles turunan vitamin A, digunakan jika pengobatan sebelumnya tidak berhasil. Obat ini membantu membasmi bakteri, mengurangi produksi minyak berlebih, mencegah pori-pori tersumbat, dan mengurangi peradangan pada jerawat nodul. \n5.Dokter dapat menyuntikkan kortikosteroid ke jerawat nodul yang besar dan sulit hilang. Suntikan ini membantu mengurangi peradangan dan mempercepat penyembuhan jerawat nodul. \n6.Laser wajah dapat mengurangi jerawat nodul dan bopeng dengan sinar khusus. Penanganan dapat dilakukan secara kombinasi untuk hasil yang optimal.',
                   )
                 : (widget.pred![0]['label'] == label[2])
                     ? DetailResultPage(
                         image: widget.image,
                         sDetail:
-                            'normalface Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                            'Kulit wajah normal adalah jenis kulit yang sehat dan seimbang secara optimal.',
                         lDetail:
-                            'normalface Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem',
+                            'Kulit wajah normal adalah jenis kulit yang sehat dan seimbang secara optimal. Kulit ini memiliki tekstur halus, pori-pori kecil, dan tidak mengalami masalah kulit berlebihan seperti kekeringan atau kelebihan minyak. Kulit wajah normal cenderung terlihat segar, cerah, dan memiliki tingkat kelembapan yang baik.',
                         penyakit: 'normalface',
+                        penyebab:
+                            '\n1.Genetika \n2.Keseimbangan produksi minyak, menghasilkan cukup minyak untuk menjaga kelembapan kulit tanpa membuatnya terlalu berminyak. \n3.Kelembapan alami dapat menjaga kelembapan kulit dengan baik tanpa terlalu kering atau terlalu lembab. \n4.Perawatan yang tepat. \n5.Membersihkan wajah secara teratur, menggunakan pelembap yang sesuai, dan melindungi kulit dari sinar matahari dapat membantu menjaga keadaan kulit wajah normal. \n6. Gaya hidup sehat seperti pola makan yang seimbang, tidur yang cukup, dan menghindari stres berlebihan.',
                         tips:
-                            'Berikut adalah beberapa upaya yang dapat dilakukan untuk mencegah dermatitis kontak:\n\n1. Hindari iritan dan alergen. Cobalah untuk mengidentifikasi dan menghindari zat yang mengiritasi kulit atau menyebabkan reaksi alergi.\n\n2. Cuci kulit. Kamu bisa menghilangkan sebagian besar zat penyebab ruam jika segera mencuci kulit setelah bersentuhan dengannya. Gunakan sabun lembut, bebas pewangi, air hangat, dan bilas sepenuhnya. \n\n3. Cuci pakaian atau barang lain yang mungkin terkena alergen tanaman.\n\n4. Kenakan pakaian pelindung atau sarung tangan. Masker wajah, kacamata, sarung tangan, dan barang pelindung lainnya dapat melindungi kami dari zat yang mengiritasi. Termasuk cairan pembersih rumah.\n\n5. Gunakan penutup untuk menutup logam bersentuhan dengan kulit. Ini bisa menghindari paparan dari kancing celana jeans atau resleting yang terbuat dari logam.',
-                        medicine: [
-                          'assets/obat_dermatitis1.png',
-                          'assets/obat_dermatitis2.png',
-                          'assets/obat_dermatitis3.png',
-                          'assets/obat_dermatitis4.png'
-                        ],
+                            '\n1.Tidak terlalu berminyak maupun terlalu kering. \n2.Tidak ada masalah kulit yang mencolok seperti jerawat atau peradangan. \n3.Poros-poros kulit terlihat kecil dan tidak tersumbat. \n4.Kulit terasa lembut dan kenyal. \n5.Warna kulit merata tanpa bintik-bintik atau kemerahan yang berlebihan. \n6.Tidak ada masalah sensitivitas yang signifikan terhadap produk atau rangsangan eksternal.',
                       )
                     : (widget.pred![0]['label'] == label[3])
                         ? DetailResultPage(
                             image: widget.image,
                             sDetail:
-                                'papula Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                                'Jerawat papula adalah jerawat yang menonjol, kecil, padat, tampak kemerahan, dan tidak mengandung nanah.',
                             lDetail:
-                                'papula Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem',
+                                'Jerawat papula adalah jerawat yang menonjol, kecil, padat, tampak kemerahan, dan tidak mengandung nanah. Meski bukanlah kondisi yang serius, jerawat ini dapat mengganggu penampilan. Sama seperti jerawat pada umumnya, jerawat papula muncul karena penyumbatan dan peradangan di pori-pori wajah. Jerawat ini ditandai dengan munculnya benjolan padat dengan ukuran kurang dari 1 cm.',
                             penyakit: 'papula',
+                            penyebab:
+                                '\n1.Pengaruh hormonal \n1.Infeksi bakteri Propionibacterium acnes di permukaan kulit akibat pori-pori tersumbat. \n2.Produksi minyak di wajah yang berlebih. \n3.Penyumbatan di folikel rambut dan kelenjar minyak. \n4.Terlalu banyak konsumsi makanan manis. \n5.Stres',
                             tips:
-                                'Selain menggunakan obat anti jamur, pengidap dapat melakukan beberapa hal berikut ini untuk membantu mengatasi kurap:\n\n1. Tidak memakai pakaian dengan bahan yang bisa memicu iritasi pada area kurap.\n\n2. Mencuci baju dan sprei setiap hari selama kurap belum sembuh sepenuhnya.\n\n3. Menjaga kebersihan lingkungan rumah dan sekitar.\n\n4. Menjaga kebersihan dan mengeringkan kulit secara teratur, terutama pada area yang terinfeksi kurap.\n\n5. Segera membawa hewan peliharaan ke dokter apabila terkena kurap.\n\n6. Sebisa mungkin tidak menggaruk area tubuh yang terasa gatal.\n\n7. Langsung bertanya pada dokter kulit apabila kurap tidak membaik selama lebih dari dua minggu. ',
-                            medicine: [
-                              'assets/obat_kurap1.png',
-                              'assets/obat_kurap2.png',
-                              'assets/obat_kurap3.png',
-                              'assets/obat_kurap4.png'
-                            ],
+                                '\n1.Cuci wajah dan tubuh secara rutin untuk mengatasi jerawat papula. Hindari mencuci wajah terlalu sering agar tidak iritasi. \n2.Jangan menyentuh atau memecahkan jerawat papula. Tindakan tersebut bisa memperburuk peradangan dan meninggalkan bekas luka. \n3.Hindari penggunaan losion dan make-up pada area jerawat. Gunakan produk yang sudah teruji dan cocok untuk kulit Anda. \n4.Bersihkan rambut secara rutin dan hindari model rambut berponi.',
                           )
                         : DetailResultPage(
                             image: widget.image,
                             sDetail:
-                                'pustula Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                                'Jerawat pustula adalah jenis jerawat yang berisi nanah.',
                             lDetail:
-                                'pustula Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem',
+                                'Jerawat pustula adalah jenis jerawat yang berisi nanah. Meski dapat sembuh dengan sendirinya, mengoleskan obat jerawat maupun penanganan dari dokter dapat membantu mempercepat penyembuhan jerawat pustula. Jerawat pustula muncul sebagai benjolan meradang berwarna kemerahan dengan bagian tengah berwarna putih. Ukuran jerawat ini dapat bervariasi, mulai dari kecil hingga besar, serta terasa nyeri ketika disentuh.',
                             penyakit: 'pustula',
+                            penyebab:
+                                '\n1.Kurang menjaga kebersihan kulit. \n2.Menggunakan kosmetik yang berbahan dasar minyak sehingga dapat menyumbat pori. \n3.Mengonsumsi makan tinggi gula. \n4.Mengonsumsi obat-obatan tertentu, termasuk dari golongan kortikosteroid. \n5.Merokok. \n6.Menderita stres. \n7.Memiliki anggota keluarga dengan keluhan serupa atau karena faktor genetik',
                             tips:
-                                'Ada beberapa cara yang dapat dilakukan untuk menurunkan risiko masalah kulit ini dan mencegah penyebarannya pada orang lain. \n\nKetahui beberapa cara pencegahannya, antara lain:\n1.Hindari kontak dengan kutil (diri sendiri maupun orang lain).\n2.Jaga kebersihan tangan.\n3.Jaga tubuh agar tidak lembap.\n4.Memakai alas kaki di tempat umum.\n5.Hindari menggaruk kutil.',
-                            medicine: [
-                              'assets/obat_kutil1.png',
-                              'assets/obat_kutil2.png',
-                              'assets/obat_kutil3.png',
-                              'assets/obat_kutil4.png'
-                            ],
+                                'Untuk menghilangkan jerawat pustula lebih cepat, ada beberapa cara yang bisa Anda lakukan, yaitu: \n\n1.Salep jerawat mengandung asam salisilat, benzoil peroksida, retinoid, dan antibiotik. Salep ini digunakan untuk mengatasi jerawat ringan hingga sedang. Untuk jerawat parah, konsultasikan dengan dokter. \n2.Jika jerawat tidak membaik setelah menggunakan salep, dokter dapat meresepkan obat jerawat minum, seperti antibiotik atau isotretinoin, tergantung pada tingkat keparahan jerawat. \n3.Fototerapi menggunakan cahaya khusus untuk mengatasi jerawat pustula yang sulit diobati. Metode ini membunuh bakteri penyebab jerawat dan mengurangi produksi minyak.',
                           ),
       ),
     );

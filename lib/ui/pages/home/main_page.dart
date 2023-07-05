@@ -1,25 +1,60 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
-import 'package:flutter_acne/provider/article_page_provider.dart';
-import 'package:flutter_acne/provider/page_provider.dart';
+// import 'package:provider/provider.dart';
+// import 'package:flutter_acne/provider/article_page_provider.dart';
+// import 'package:flutter_acne/provider/page_provider.dart';
 import 'package:flutter_acne/shared/theme.dart';
 import 'package:flutter_acne/shared/size_config.dart';
 import 'package:flutter_acne/ui/pages/home/article_page.dart';
 import 'package:flutter_acne/ui/pages/home/home_page.dart';
-import 'package:flutter_acne/ui/pages/home/camera_page.dart';
+//import 'package:flutter_acne/ui/pages/home/camera_page.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:flutter_acne/ui/pages/preview_scan_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
+
+  //state mainpage
   @override
-  _MainState createState() => _MainState();
+  State<MainPage> createState() => _MainState();
 }
 
 class _MainState extends State<MainPage> {
   int _currentindex = 0;
 
-  List pages = [HomePage(), CameraPage(), ArticlePage()];
+  late File image;
+  final picker = ImagePicker();
+
+  Future getImage(source) async {
+    final pickedFile = await picker.pickImage(source: source);
+
+    setState(() {
+      if (pickedFile != null) {
+        image = File(pickedFile.path);
+        var state = 1;
+        if (source == ImageSource.camera) {
+          state = 2;
+        } else {
+          state = 1;
+        }
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (contex) => PreviewScan(
+              image: image,
+              state: state,
+            ),
+          ),
+        );
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
+
+  List pages = [HomePage(), HomePage(), ArticlePage()];
 
   @override
   Widget build(BuildContext context) {
@@ -38,135 +73,11 @@ class _MainState extends State<MainPage> {
             onTap: (int i) {
               setState(() {
                 _currentindex = i;
+                if (i == 1) {
+                  getImage(ImageSource
+                      .camera); // Panggil metode saat ikon kamera diklik
+                }
               });
             }));
   }
 }
-
-// class MainPage extends StatelessWidget {
-//   const MainPage({Key? key}) : super(key: key);
-//   static const snackBarDuration = Duration(seconds: 3);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     DateTime? backButtonPressTime;
-//     ArticlePageProvider articlePageProvider =
-//         Provider.of<ArticlePageProvider>(context);
-//     PageProvider pageProvider = Provider.of<PageProvider>(context);
-//     Widget customNavigationBar() {
-//       return SizedBox(
-//         height: getProportionateScreenHeight(70),
-//         child: ClipRRect(
-//           borderRadius: const BorderRadius.only(
-//             topLeft: Radius.circular(10),
-//             topRight: Radius.circular(10),
-//           ),
-//           child: BottomAppBar(
-//             child: BottomNavigationBar(
-//               onTap: (value) => pageProvider.currentIndex = value,
-//               type: BottomNavigationBarType.fixed,
-//               currentIndex: pageProvider.currentIndex,
-//               backgroundColor: pinkColor,
-//               selectedLabelStyle: opensansTextStyle.copyWith(
-//                 color: whiteColor,
-//                 fontSize: 12,
-//                 fontWeight: weightBold,
-//               ),
-//               selectedItemColor: whiteColor,
-//               unselectedItemColor: whiteColor,
-//               items: [
-//                 BottomNavigationBarItem(
-//                   label: 'Home',
-//                   icon: Image.asset(
-//                     'assets/icon_home.png',
-//                     color: pageProvider.currentIndex == 0
-//                         ? yellowColor
-//                         : whiteColor,
-//                     width: getProportionateScreenWidth(30),
-//                   ),
-//                 ),
-//                 BottomNavigationBarItem(
-//                   label: 'Article',
-//                   icon: Image.asset(
-//                     'assets/icon_article.png',
-//                     width: getProportionateScreenWidth(26),
-//                     color: pageProvider.currentIndex == 1
-//                         ? yellowColor
-//                         : whiteColor,
-//                   ),
-//                 )
-//               ],
-//             ),
-//           ),
-//         ),
-//       );
-//     }
-
-//     Widget body() {
-//       switch (pageProvider.currentIndex) {
-//         case 0:
-//           return const HomePage();
-//         case 1:
-//         return const ArticlePage();
-//         default:
-//           return const HomePage();
-//       }
-//     }
-
-//     Future<bool> handleWillPop(BuildContext context) async {
-//       final now = DateTime.now();
-//       final backButtonHasNotBeenPressedOrSnackBarHasBeenClosed =
-//           backButtonPressTime == null ||
-//               now.difference(backButtonPressTime!) > snackBarDuration;
-
-//       if (backButtonHasNotBeenPressedOrSnackBarHasBeenClosed) {
-//         backButtonPressTime = now;
-//         if (articlePageProvider.currentIndex != 5 &&
-//             pageProvider.currentIndex != 0) {
-//           articlePageProvider.currentIndex = 5;
-//           return false;
-//         } else if (articlePageProvider.currentIndex == 5 &&
-//             pageProvider.currentIndex == 1) {
-//           pageProvider.currentIndex = 0;
-//           return false;
-//         } else {
-//           ScaffoldMessenger.of(context).showSnackBar(
-//             SnackBar(
-//               content: Text(
-//                 'Tekan tombol kembali lagi untuk keluar',
-//                 style: opensansTextStyle.copyWith(
-//                   color: Colors.black,
-//                   fontWeight: weightMedium,
-//                   fontSize: 12,
-//                 ),
-//               ),
-//               shape: RoundedRectangleBorder(
-//                 borderRadius: BorderRadius.circular(10),
-//               ),
-//               backgroundColor: yellowColor,
-//               duration: snackBarDuration,
-//             ),
-//           );
-//           return false;
-//         }
-//       }
-
-//       return true;
-//     }
-
-//     return AnnotatedRegion<SystemUiOverlayStyle>(
-//       value: const SystemUiOverlayStyle(
-//         statusBarColor: Colors.transparent,
-//       ),
-//       child: WillPopScope(
-//         onWillPop: () async {
-//           return handleWillPop(context);
-//         },
-//         child: Scaffold(
-//           bottomNavigationBar: customNavigationBar(),
-//           body: body(),
-//         ),
-//       ),
-//     );
-//   }
-// }

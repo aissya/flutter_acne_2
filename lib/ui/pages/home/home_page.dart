@@ -4,9 +4,10 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_acne/shared/theme.dart';
 import 'package:flutter_acne/shared/size_config.dart';
-//import 'package:flutter_acne/ui/pages/preview_scan_page.dart';
+import 'package:flutter_acne/ui/pages/preview_scan_page.dart';
 //import 'package:flutter_acne/ui/pages/loading_page.dart';
-import 'package:flutter_acne/ui/pages/TfliteModel.dart';
+//import 'package:flutter_acne/ui/pages/TfliteModel.dart';
+import 'package:flutter_acne/ui/pages/home/penggunaan.dart';
 import 'package:flutter_acne/ui/widgets/article_home_tile.dart';
 //import 'package:tflite/tflite.dart';
 
@@ -36,7 +37,7 @@ class _HomePageState extends State<HomePage> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (contex) => TfliteModel(
+            builder: (contex) => PreviewScan(
               image: image,
               state: state,
             ),
@@ -221,11 +222,53 @@ class _HomePageState extends State<HomePage> {
                             right: getProportionateScreenWidth(30),
                           ),
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(28),
+                            borderRadius: BorderRadius.circular(20),
                             image: const DecorationImage(
                               fit: BoxFit.cover,
                               image: AssetImage('assets/bg_penggunaan.png'),
                             ),
+                          ),
+                          child: Stack(
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    height: getProportionateScreenHeight(30),
+                                  ),
+                                  Text(
+                                    'Baca petunjuk\npenggunaan\nberikut',
+                                    style: aclonicaTextStyle.copyWith(
+                                      fontSize: 20,
+                                      fontWeight: weightBold,
+                                      color: whiteColor,
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => Penggunaan()),
+                                      );
+                                    },
+                                    child: Image.asset(
+                                      'assets/btn_penggunaan.png',
+                                      width: getProportionateScreenWidth(200),
+                                      height: getProportionateScreenHeight(70),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Align(
+                                alignment: Alignment.topRight,
+                                child: Image.asset(
+                                  'assets/girl_penggunaan.png',
+                                  width: getProportionateScreenWidth(160),
+                                  height: getProportionateScreenHeight(176),
+                                ),
+                              )
+                            ],
                           ),
                         ),
                         SizedBox(
