@@ -27,8 +27,8 @@ class ProfileInfoWidget extends StatelessWidget {
             margin: EdgeInsets.only(
               bottom: getProportionateScreenHeight(20),
             ),
-            height: getProportionateScreenHeight(145),
-            width: getProportionateScreenWidth(145),
+            height: getProportionateScreenHeight(130),
+            width: getProportionateScreenWidth(130),
             decoration: BoxDecoration(
               color: Color(0xffD9D9D9),
               shape: BoxShape.circle,
@@ -39,7 +39,7 @@ class ProfileInfoWidget extends StatelessWidget {
           Text(
             name,
             style: opensansTextStyle.copyWith(
-              fontSize: 20,
+              fontSize: 15,
               fontWeight: weightBold,
             ),
           ),

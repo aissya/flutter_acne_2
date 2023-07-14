@@ -25,18 +25,14 @@ class ArticlePage extends StatelessWidget {
           toolbarHeight: getProportionateScreenHeight(60),
           centerTitle: true,
           flexibleSpace: Container(
-            padding: EdgeInsets.only(top: getProportionateScreenHeight(10)),
+            padding: EdgeInsets.only(top: getProportionateScreenHeight(30)),
             width: double.infinity,
             decoration: const BoxDecoration(
               color: pinkColor,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(10),
-                bottomRight: Radius.circular(10),
-              ),
             ),
             child: Center(
               child: Text(
-                'Artikel',
+                'Article',
                 style: opensansTextStyle.copyWith(
                   fontSize: getProportionateScreenWidth(20),
                   fontWeight: weightBold,

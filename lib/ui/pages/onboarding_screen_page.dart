@@ -143,11 +143,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       child: Text(
                         //text tiap page
                         _currentPage == 0
-                            ? 'Jangan biarkan jerawat menghalangimu tampil percaya diri. Temukan solusinya dengan aplikasi Mooi Skin.'
+                            ? "Don't let acne break your confidence. Find the solution with Mooi Skin app"
                             : _currentPage == 1
-                                ? 'Scan dan unggah gambar kulit wajah kamu, untuk mendapatkan rekomendasi perawatan kulit wajah yang tepat'
+                                ? 'Scan and upload a picture of your facial skin to get recommendations'
                                 : _currentPage == 2
-                                    ? 'Siap untuk memiliki kulit wajah yang sehat dan bebas jerawat?'
+                                    ? 'Are you ready to have a healthy and acne-free skin?'
                                     : '',
                         style: aclonicaTextStyle.copyWith(
                           color: whiteColor,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_acne/provider/article_page_provider.dart';
 import 'package:flutter_acne/provider/page_provider.dart';
-import 'package:flutter_acne/ui/pages/about_us_screen_page.dart';
+import 'package:flutter_acne/ui/pages/about_us.dart';
 import 'package:flutter_acne/ui/pages/home/main_page.dart';
 import 'package:flutter_acne/ui/pages/onboarding_screen_page.dart';
 import 'package:flutter_acne/ui/pages/splash_screen_page.dart';

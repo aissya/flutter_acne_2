@@ -11,7 +11,7 @@ import 'package:flutter_acne/ui/pages/home/home_page.dart';
 //import 'package:flutter_acne/ui/pages/home/camera_page.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:flutter_acne/ui/pages/preview_scan_page.dart';
+import 'package:flutter_acne/ui/pages/scan_process.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -42,7 +42,7 @@ class _MainState extends State<MainPage> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (contex) => PreviewScan(
+            builder: (contex) => ScanProcess(
               image: image,
               state: state,
             ),
@@ -67,7 +67,7 @@ class _MainState extends State<MainPage> {
             items: [
               TabItem(icon: Icons.home, title: 'Home'),
               TabItem(icon: Icons.camera, title: 'Camera'),
-              TabItem(icon: Icons.article, title: 'Artikel'),
+              TabItem(icon: Icons.article, title: 'Article'),
             ],
             initialActiveIndex: 0, //optional, default as 0
             onTap: (int i) {

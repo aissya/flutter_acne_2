@@ -29,15 +29,11 @@ class _AboutUsScreenPageState extends State<AboutUsScreenPage> {
         automaticallyImplyLeading: false,
         toolbarHeight: getProportionateScreenHeight(60),
         flexibleSpace: Container(
-          padding: EdgeInsets.only(top: getProportionateScreenHeight(30)),
+          padding: EdgeInsets.only(top: getProportionateScreenHeight(40)),
           width: double.infinity,
           height: double.infinity,
           decoration: const BoxDecoration(
             color: pinkColor,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
-            ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -94,7 +90,7 @@ class _AboutUsScreenPageState extends State<AboutUsScreenPage> {
                     ),
                   ),
                   Image.asset(
-                    'assets/splash_girl_3.png',
+                    'assets/girl_logo.png',
                     width: getProportionateScreenWidth(250),
                   ),
                   Text(
@@ -119,7 +115,6 @@ class _AboutUsScreenPageState extends State<AboutUsScreenPage> {
                 top: getProportionateScreenHeight(40),
                 left: getProportionateScreenWidth(25),
                 right: getProportionateScreenWidth(25),
-                bottom: getProportionateScreenWidth(40),
               ),
               child: Stack(
                 children: [
@@ -127,7 +122,7 @@ class _AboutUsScreenPageState extends State<AboutUsScreenPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Aplikasi deteksi jerawat kami hadir dengan tujuan membantu Anda memahami dan mengatasi permasalahan jerawat dengan mudah dan efektif.',
+                        'Our acne detection app is here to help you understand and solve acne problems easily and effectively.',
                         textAlign: TextAlign.justify,
                         style: opensansTextStyle.copyWith(
                           fontSize: 16,
@@ -139,13 +134,14 @@ class _AboutUsScreenPageState extends State<AboutUsScreenPage> {
                 ],
               ),
             ),
+            SizedBox(height: getProportionateScreenHeight(80)),
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   //girl asset dan title
                   Text(
-                    'Our Team',
+                    'Team',
                     style: aclonicaTextStyle.copyWith(
                       fontSize: 30,
                       fontWeight: weightBold,
@@ -155,15 +151,76 @@ class _AboutUsScreenPageState extends State<AboutUsScreenPage> {
                 ],
               ),
             ),
-            ProfileInfoWidget(
-              image: 'assets/icon_home.png',
-              name: 'Aissya Embun Setyasih ',
-              info: 'IK3A | 3.34.20.0.03',
+            Container(
+              margin: EdgeInsets.only(
+                left: getProportionateScreenHeight(30),
+                right: getProportionateScreenHeight(30),
+                bottom: getProportionateScreenHeight(10),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ProfileInfoWidget(
+                        image: 'assets/icon_home.png',
+                        name: 'Aissya Embun.S. ',
+                        info: 'IK3A | 3.34.20.0.03',
+                      ),
+                      ProfileInfoWidget(
+                        image: 'assets/icon_home.png',
+                        name: 'Siti Nurhaliza',
+                        info: 'IK3A | 3.34.20.0.22',
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-            ProfileInfoWidget(
-              image: 'assets/icon_home.png',
-              name: 'Siti Nurhaliza',
-              info: 'IK3A | 3.34.20.0.22',
+            SizedBox(height: getProportionateScreenHeight(80)),
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  //girl asset dan title
+                  Text(
+                    'Advisor',
+                    style: aclonicaTextStyle.copyWith(
+                      fontSize: 30,
+                      fontWeight: weightBold,
+                      color: greenColor,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                left: getProportionateScreenHeight(30),
+                right: getProportionateScreenHeight(30),
+                bottom: getProportionateScreenHeight(10),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ProfileInfoWidget(
+                        image: 'assets/icon_home.png',
+                        name: 'Slamet Handoko,\n S. Kom., M. Kom.\n',
+                        info: 'NIP. 197501302001121001',
+                      ),
+                      ProfileInfoWidget(
+                        image: 'assets/icon_home.png',
+                        name: 'Prayitno, S.ST.,\n M.T., Ph.D.\n',
+                        info: 'NIP. 198504102014041002',
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
             SizedBox(height: getProportionateScreenHeight(40)),
           ],

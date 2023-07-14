@@ -33,10 +33,6 @@ class _PenggunaanState extends State<Penggunaan> {
           height: double.infinity,
           decoration: const BoxDecoration(
             color: pinkColor,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
-            ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -50,7 +46,7 @@ class _PenggunaanState extends State<Penggunaan> {
                         size: 24, color: whiteColor),
                   )),
               Text(
-                'Petunjuk Penggunaan',
+                'Usage Instructions',
                 style: opensansTextStyle.copyWith(
                   fontSize: 20,
                   fontWeight: weightBold,

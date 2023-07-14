@@ -60,7 +60,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
                 children: [
                   //girl asset dan title
                   Image.asset(
-                    'assets/splash_girl_3.png',
+                    'assets/girl_logo.png',
                     width: getProportionateScreenWidth(270),
                   ),
                   Text(

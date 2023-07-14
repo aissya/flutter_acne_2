@@ -4,28 +4,28 @@ import 'package:flutter_acne/shared/size_config.dart';
 import 'package:flutter_acne/shared/theme.dart';
 import 'package:vs_scrollbar/vs_scrollbar.dart';
 
-class DetailResultPage extends StatefulWidget {
-  const DetailResultPage(
+class ScanProcess3Detail extends StatefulWidget {
+  const ScanProcess3Detail(
       {Key? key,
       this.image,
       required this.sDetail,
       required this.lDetail,
       required this.penyakit,
-      required this.tips,
+      required this.perawatan,
       required this.penyebab})
       : super(key: key);
   final File? image;
   final String sDetail;
   final String lDetail;
   final String penyakit;
-  final String tips;
+  final String perawatan;
   final String penyebab;
 
   @override
-  _DetailResultPageState createState() => _DetailResultPageState();
+  _ScanProcess3DetailState createState() => _ScanProcess3DetailState();
 }
 
-class _DetailResultPageState extends State<DetailResultPage> {
+class _ScanProcess3DetailState extends State<ScanProcess3Detail> {
   bool lText = false;
 
   @override
@@ -123,7 +123,7 @@ class _DetailResultPageState extends State<DetailResultPage> {
                     ),
                   ),
                   Text(
-                    widget.tips,
+                    widget.penyebab,
                     style: opensansTextStyle.copyWith(
                       fontSize: getProportionateScreenWidth(13),
                     ),
@@ -144,7 +144,7 @@ class _DetailResultPageState extends State<DetailResultPage> {
                     ),
                   ),
                   Text(
-                    widget.tips,
+                    widget.perawatan,
                     style: opensansTextStyle.copyWith(
                       fontSize: getProportionateScreenWidth(13),
                     ),

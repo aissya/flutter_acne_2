@@ -4,11 +4,10 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_acne/shared/theme.dart';
 import 'package:flutter_acne/shared/size_config.dart';
-import 'package:flutter_acne/ui/pages/preview_scan_page.dart';
+import 'package:flutter_acne/ui/pages/scan_process.dart';
 //import 'package:flutter_acne/ui/pages/loading_page.dart';
 //import 'package:flutter_acne/ui/pages/TfliteModel.dart';
 import 'package:flutter_acne/ui/pages/home/penggunaan.dart';
-import 'package:flutter_acne/ui/widgets/article_home_tile.dart';
 //import 'package:tflite/tflite.dart';
 
 class HomePage extends StatefulWidget {
@@ -37,7 +36,7 @@ class _HomePageState extends State<HomePage> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (contex) => PreviewScan(
+            builder: (contex) => ScanProcess(
               image: image,
               state: state,
             ),
@@ -112,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                   Align(
                     alignment: Alignment.topRight,
                     child: Image.asset(
-                      'assets/splash_girl_3.png',
+                      'assets/girl_logo.png',
                       width: getProportionateScreenWidth(160),
                       height: getProportionateScreenHeight(176),
                     ),
@@ -122,7 +121,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Container(
               width: double.infinity,
-              height: getProportionateScreenHeight(700),
+              height: getProportionateScreenHeight(600),
               decoration: const BoxDecoration(
                 color: whiteColor,
                 borderRadius: BorderRadius.only(
@@ -145,7 +144,7 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'LOREM',
+                          'Scan Your Acne',
                           style: aclonicaTextStyle.copyWith(
                             fontSize: 20,
                             fontWeight: weightBold,
@@ -203,7 +202,7 @@ class _HomePageState extends State<HomePage> {
                             left: getProportionateScreenWidth(30),
                           ),
                           child: Text(
-                            'LOREM',
+                            'Learn More',
                             style: aclonicaTextStyle.copyWith(
                               fontSize: 20,
                               fontWeight: weightBold,
@@ -231,33 +230,79 @@ class _HomePageState extends State<HomePage> {
                           child: Stack(
                             children: [
                               Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(
+                                  Container(
+                                    margin: EdgeInsets.only(
+                                      top: getProportionateScreenWidth(40),
+                                      left: getProportionateScreenWidth(15),
+                                    ),
+                                    child: Stack(
+                                      children: [
+                                        SizedBox(
+                                          height:
+                                              getProportionateScreenHeight(30),
+                                        ),
+                                        Text(
+                                          'Read the\nfollowing usage\ninstructions',
+                                          style: aclonicaTextStyle.copyWith(
+                                            fontSize: 20,
+                                            fontWeight: weightBold,
+                                            color: whiteColor,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+
+                                  Container(
+                                    width: getProportionateScreenWidth(120),
                                     height: getProportionateScreenHeight(30),
-                                  ),
-                                  Text(
-                                    'Baca petunjuk\npenggunaan\nberikut',
-                                    style: aclonicaTextStyle.copyWith(
-                                      fontSize: 20,
-                                      fontWeight: weightBold,
-                                      color: whiteColor,
+                                    margin: EdgeInsets.only(
+                                      left: getProportionateScreenWidth(15),
+                                      top: getProportionateScreenWidth(10),
+                                    ),
+                                    child: ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                        ),
+                                        primary: whiteColor,
+                                      ),
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => Penggunaan(),
+                                          ),
+                                        );
+                                      },
+                                      child: Text(
+                                        'Read',
+                                        style: aclonicaTextStyle.copyWith(
+                                          fontSize:
+                                              getProportionateScreenWidth(12),
+                                          fontWeight: weightSemiBold,
+                                          color: pinkColor,
+                                        ),
+                                      ),
                                     ),
                                   ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => Penggunaan()),
-                                      );
-                                    },
-                                    child: Image.asset(
-                                      'assets/btn_penggunaan.png',
-                                      width: getProportionateScreenWidth(200),
-                                      height: getProportionateScreenHeight(70),
-                                    ),
-                                  ),
+                                  // GestureDetector(
+                                  //   onTap: () {
+                                  //     Navigator.push(
+                                  //       context,
+                                  //       MaterialPageRoute(
+                                  //           builder: (context) => Penggunaan()),
+                                  //     );
+                                  //   },
+                                  //   child: Image.asset(
+                                  //     'assets/btn_penggunaan.png',
+                                  //     width: getProportionateScreenWidth(200),
+                                  //     height: getProportionateScreenHeight(70),
+                                  //   ),
+                                  // ),
                                 ],
                               ),
                               Align(
@@ -268,40 +313,6 @@ class _HomePageState extends State<HomePage> {
                                   height: getProportionateScreenHeight(176),
                                 ),
                               )
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: getProportionateScreenHeight(30),
-                        ),
-                        SingleChildScrollView(
-                          physics: BouncingScrollPhysics(),
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                            children: [
-                              SizedBox(
-                                width: getProportionateScreenWidth(26),
-                              ),
-                              ArticleHomeTile(
-                                id: 0,
-                                image: 'assets/icon_home.png',
-                              ),
-                              ArticleHomeTile(
-                                id: 1,
-                                image: 'assets/icon_home.png',
-                              ),
-                              ArticleHomeTile(
-                                id: 2,
-                                image: 'assets/icon_home.png',
-                              ),
-                              ArticleHomeTile(
-                                id: 3,
-                                image: 'assets/icon_home.png',
-                              ),
-                              ArticleHomeTile(
-                                id: 4,
-                                image: 'assets/icon_home.png',
-                              ),
                             ],
                           ),
                         ),

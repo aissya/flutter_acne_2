@@ -4,18 +4,18 @@ import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_acne/shared/size_config.dart';
 import 'package:flutter_acne/shared/theme.dart';
-import 'package:flutter_acne/ui/pages/result_page.dart';
+import 'package:flutter_acne/ui/pages/scan_process_3.dart';
 import 'package:tflite/tflite.dart';
 
-class LoadingPage extends StatefulWidget {
-  const LoadingPage({Key? key, required this.image}) : super(key: key);
+class ScanProcess2 extends StatefulWidget {
+  const ScanProcess2({Key? key, required this.image}) : super(key: key);
   final File? image;
 
   @override
-  State<LoadingPage> createState() => _LoadingPageState();
+  State<ScanProcess2> createState() => _ScanProcess2State();
 }
 
-class _LoadingPageState extends State<LoadingPage> {
+class _ScanProcess2State extends State<ScanProcess2> {
   @override
   void initState() {
     super.initState();
@@ -52,7 +52,7 @@ class _LoadingPageState extends State<LoadingPage> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => ResultPage(
+            builder: (context) => ScanProcess3(
               image: widget.image,
               pred: output,
             ),
@@ -83,7 +83,7 @@ class _LoadingPageState extends State<LoadingPage> {
                 ),
               ),
               Text(
-                'Diagnose...',
+                'Processing',
                 style: aclonicaTextStyle.copyWith(
                   fontSize: getProportionateScreenWidth(20),
                   fontWeight: weightBold,
