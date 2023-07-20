@@ -132,7 +132,7 @@ class _ScanProcessState extends State<ScanProcess> {
                           );
                         },
                         child: Text(
-                          'Diagnose',
+                          'Process',
                           style: aclonicaTextStyle.copyWith(
                             fontSize: getProportionateScreenWidth(15),
                             fontWeight: weightSemiBold,

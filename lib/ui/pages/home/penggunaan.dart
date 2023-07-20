@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_acne/shared/theme.dart';
 import 'package:flutter_acne/shared/size_config.dart';
 import 'package:vs_scrollbar/vs_scrollbar.dart';
+import 'package:flutter_acne/ui/widgets/penggunaan_widget.dart';
 
 class Penggunaan extends StatefulWidget {
   const Penggunaan({Key? key}) : super(key: key);
@@ -115,7 +116,7 @@ class _PenggunaanState extends State<Penggunaan> {
               child: Stack(
                 children: [
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
                         margin: EdgeInsets.only(
@@ -125,15 +126,53 @@ class _PenggunaanState extends State<Penggunaan> {
                           bottom: getProportionateScreenHeight(42),
                         ),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text(
-                              'Berikut merupakan petunjuk penggunaan aplikasi Mooi Skin\n\n1.Buka pada halaman Home\n\n2.Pilih ambil gambar dari kamera atau unggah foto galeri\n\n3.Arahkan kamera pada wajah (Apabila menggunakan fitur ambil gambar dengan kamera)\n\n4..........',
-                              textAlign: TextAlign.justify,
-                              style: opensansTextStyle.copyWith(
-                                fontSize: 17,
-                                fontWeight: weightMedium,
-                              ),
+                            // Align(
+                            //   alignment: Alignment.center,
+                            //   child: Image.asset(
+                            //     'assets/s_1.png',
+                            //     width: getProportionateScreenWidth(160),
+                            //     height: getProportionateScreenHeight(176),
+                            //   ),
+                            // ),
+                            // Text(
+                            //   'Home Page',
+                            //   textAlign: TextAlign.center,
+                            //   style: opensansTextStyle.copyWith(
+                            //     fontSize: 17,
+                            //     fontWeight: weightMedium,
+                            //   ),
+                            // ),
+                            PenggunaanWidget(
+                              stepImage: 'assets/s_1.png',
+                              step: 'Home Page',
+                            ),
+                            PenggunaanWidget(
+                              stepImage: 'assets/s_2.png',
+                              step:
+                                  'Take a picture from the camera\nor upload from the gallery',
+                            ),
+                            PenggunaanWidget(
+                              stepImage: 'assets/s_3.png',
+                              step: 'Point the camera at your face',
+                            ),
+                            PenggunaanWidget(
+                              stepImage: 'assets/s_4.png',
+                              step: 'Make sure acne is clearly visible',
+                            ),
+                            PenggunaanWidget(
+                              stepImage: 'assets/s_5.png',
+                              step: "Click 'Diagnose'",
+                            ),
+                            PenggunaanWidget(
+                              stepImage: 'assets/s_6.png',
+                              step: 'Wait for processing',
+                            ),
+
+                            PenggunaanWidget(
+                              stepImage: 'assets/s_7.png',
+                              step: 'See the result',
                             ),
                           ],
                         ),

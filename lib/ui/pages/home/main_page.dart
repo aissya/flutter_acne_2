@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 // import 'package:flutter_acne/provider/page_provider.dart';
 import 'package:flutter_acne/shared/theme.dart';
 import 'package:flutter_acne/shared/size_config.dart';
-import 'package:flutter_acne/ui/pages/home/article_page.dart';
+import 'package:flutter_acne/ui/pages/home/article_page_api.dart';
 import 'package:flutter_acne/ui/pages/home/home_page.dart';
 //import 'package:flutter_acne/ui/pages/home/camera_page.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';

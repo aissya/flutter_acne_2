@@ -122,7 +122,7 @@ class _AboutUsScreenPageState extends State<AboutUsScreenPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Our acne detection app is here to help you understand and solve acne problems easily and effectively.',
+                        'Mooi Skin app is here to help you understand and solve acne problems easily and effectively.',
                         textAlign: TextAlign.justify,
                         style: opensansTextStyle.copyWith(
                           fontSize: 16,
