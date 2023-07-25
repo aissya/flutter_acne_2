@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_acne/shared/theme.dart';
 import 'package:flutter_acne/shared/size_config.dart';
-import 'package:flutter_acne/ui/widgets/onboarding_body_widget.dart';
+import 'package:flutter_acne/ui/widgets/onboarding_widget.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({Key? key}) : super(key: key);
@@ -104,15 +104,15 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             },
             controller: _pageController,
             children: [
-              OnBoardingBodyWidget(
+              OnBoardingWidget(
                 heroImage: 'assets/onboarding1_girl.png',
                 pageController: _pageController,
               ),
-              OnBoardingBodyWidget(
+              OnBoardingWidget(
                 heroImage: 'assets/onboarding2_girl.png',
                 pageController: _pageController,
               ),
-              OnBoardingBodyWidget(
+              OnBoardingWidget(
                 heroImage: 'assets/onboarding3_girl.png',
                 pageController: _pageController,
               ),

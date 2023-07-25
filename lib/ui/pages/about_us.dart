@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_acne/shared/theme.dart';
 import 'package:flutter_acne/shared/size_config.dart';
-import 'package:flutter_acne/ui/widgets/profile_info_widget.dart';
+import 'package:flutter_acne/ui/widgets/about_us_widget.dart';
 import 'package:vs_scrollbar/vs_scrollbar.dart';
 
 class AboutUsScreenPage extends StatefulWidget {
@@ -163,13 +163,13 @@ class _AboutUsScreenPageState extends State<AboutUsScreenPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ProfileInfoWidget(
-                        image: 'assets/icon_home.png',
+                      AboutUsWidget(
+                        image: 'assets/foto_embun.jpg',
                         name: 'Aissya Embun.S. ',
                         info: 'IK3A | 3.34.20.0.03',
                       ),
-                      ProfileInfoWidget(
-                        image: 'assets/icon_home.png',
+                      AboutUsWidget(
+                        image: 'assets/foto_lisa.jpg',
                         name: 'Siti Nurhaliza',
                         info: 'IK3A | 3.34.20.0.22',
                       ),
@@ -207,13 +207,13 @@ class _AboutUsScreenPageState extends State<AboutUsScreenPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ProfileInfoWidget(
+                      AboutUsWidget(
                         image: 'assets/icon_home.png',
                         name: 'Slamet Handoko,\n S. Kom., M. Kom.\n',
                         info: 'NIP. 197501302001121001',
                       ),
-                      ProfileInfoWidget(
-                        image: 'assets/icon_home.png',
+                      AboutUsWidget(
+                        image: 'assets/foto_pak_prayit.jpg',
                         name: 'Prayitno, S.ST.,\n M.T., Ph.D.\n',
                         info: 'NIP. 198504102014041002',
                       ),
@@ -222,7 +222,46 @@ class _AboutUsScreenPageState extends State<AboutUsScreenPage> {
                 ],
               ),
             ),
-            SizedBox(height: getProportionateScreenHeight(40)),
+            SizedBox(height: getProportionateScreenHeight(80)),
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  //girl asset dan title
+                  Text(
+                    'Health Expert',
+                    style: aclonicaTextStyle.copyWith(
+                      fontSize: 30,
+                      fontWeight: weightBold,
+                      color: greenColor,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                left: getProportionateScreenHeight(30),
+                right: getProportionateScreenHeight(30),
+                bottom: getProportionateScreenHeight(10),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      AboutUsWidget(
+                        image: 'assets/foto_dr_rayi.png',
+                        name: 'dr.Rayi Kumalasari',
+                        info: 'Amaya SkinCare Clinic',
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: getProportionateScreenHeight(30)),
           ],
         ),
       ),

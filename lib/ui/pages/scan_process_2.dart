@@ -33,7 +33,7 @@ class _ScanProcess2State extends State<ScanProcess2> {
 
   void _loadModel() async {
     await Tflite.loadModel(
-      model: "assets/model_82.tflite",
+      model: "assets/92_resnet.tflite",
       labels: "assets/labels_82.txt",
     );
   }

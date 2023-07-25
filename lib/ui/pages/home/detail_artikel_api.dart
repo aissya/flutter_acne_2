@@ -8,12 +8,16 @@ class DetailArtikel extends StatelessWidget {
 
   final url;
   final title;
+  final image;
+  final content;
   final author;
   final publishedAt;
 
   DetailArtikel({
     this.url,
     this.title,
+    this.image,
+    this.content,
     this.author,
     this.publishedAt,
   });
@@ -32,10 +36,6 @@ class DetailArtikel extends StatelessWidget {
           height: double.infinity,
           decoration: const BoxDecoration(
             color: pinkColor,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
-            ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -63,10 +63,12 @@ class DetailArtikel extends StatelessWidget {
       ),
       body: Column(
         children: <Widget>[
-          Container(
-            height: 250,
-            color: whiteColor,
-          ),
+          image != null
+              ? Image.network(image)
+              : Container(
+                  height: 250,
+                  color: whiteColor,
+                ),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Column(
@@ -82,7 +84,7 @@ class DetailArtikel extends StatelessWidget {
                   style: TextStyle(fontStyle: FontStyle.italic),
                 ),
                 SizedBox(height: 5),
-                Text('content'),
+                Text('$content'),
                 Divider(),
                 Text('Author : $author'),
                 Text('$url'),
