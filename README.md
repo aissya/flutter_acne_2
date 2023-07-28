@@ -16,4 +16,4 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 You can install this application on :
-https://drive.google.com/file/d/1ilYzBVKl8YyEmTrSZdJC0ri3qLtqreiS/view?usp=sharing
+https://bit.ly/mooi-skin-apk
