@@ -17,3 +17,6 @@ samples, guidance on mobile development, and a full API reference.
 
 You can install this application on :
 https://bit.ly/mooi-skin-apk
+
+You can find the Model on :
+https://github.com/aissya/model_apk_deepLearning
