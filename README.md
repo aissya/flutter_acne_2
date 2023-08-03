@@ -14,3 +14,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+You can install this application on :
+https://bit.ly/mooi-skin-apk
+
+You can find the Model on :
+https://github.com/aissya/model_apk_deepLearning
