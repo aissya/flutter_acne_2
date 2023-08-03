@@ -42,7 +42,7 @@ class _ScanProcess2State extends State<ScanProcess2> {
     var output = await Tflite.runModelOnImage(
       path: image!.path,
       numResults: 2,
-      threshold: 0.5,
+      threshold: 0.2,
       imageMean: 127.5,
       imageStd: 127.5,
     );

@@ -71,7 +71,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 left: getProportionateScreenWidth(30),
                 right: getProportionateScreenWidth(30)),
             child: Text(
-              'Mulailah perjalananmu menuju kulit wajah impian bebas jerawat dengan aplikasi Mooi Skin.',
+              'Start your journey towards acne-free dream skin with the Mooi Skin app.',
               textAlign: TextAlign.center,
               style: aclonicaTextStyle.copyWith(
                 height: 1.5,
@@ -255,7 +255,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     ),
                     child: Center(
                       child: Text(
-                        'Mulai!',
+                        'Start!',
                         style: opensansTextStyle.copyWith(
                           fontWeight: weightSemiBold,
                         ),

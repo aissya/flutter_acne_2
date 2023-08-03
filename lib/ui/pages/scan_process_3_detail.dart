@@ -12,18 +12,22 @@ class ScanProcess3Detail extends StatefulWidget {
     required this.penyakit,
     required this.perawatan,
     required this.penyebab,
+    required this.disclaimer,
     required this.pengertianinggris,
     required this.perawataninggris,
     required this.penyebabinggris,
+    required this.disclaimeringgris,
   }) : super(key: key);
   final File? image;
   final String pengertian;
   final String penyakit;
   final String perawatan;
   final String penyebab;
+  final String disclaimer;
   final String pengertianinggris;
   final String perawataninggris;
   final String penyebabinggris;
+  final String disclaimeringgris;
 
   @override
   _ScanProcess3DetailState createState() => _ScanProcess3DetailState();
@@ -114,6 +118,38 @@ class _ScanProcess3DetailState extends State<ScanProcess3Detail> {
                         ),
                       ],
                     ),
+                    SizedBox(
+                      height: getProportionateScreenHeight(50),
+                    ),
+                    Container(
+                      padding:
+                          EdgeInsets.all(8), // Atur padding sesuai kebutuhan
+                      decoration: BoxDecoration(
+                        color: yellowColor, // Atur warna background box
+                        borderRadius:
+                            BorderRadius.circular(5), // Atur radius border box
+                      ),
+                      width: getProportionateScreenWidth(400),
+
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Disclaimer',
+                            style: opensansTextStyle.copyWith(
+                              fontSize: getProportionateScreenWidth(15),
+                              fontWeight: weightBold,
+                            ),
+                          ),
+                          Text(
+                            widget.disclaimer,
+                            style: opensansTextStyle.copyWith(
+                              fontSize: getProportionateScreenWidth(13),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -198,6 +234,38 @@ class _ScanProcess3DetailState extends State<ScanProcess3Detail> {
                           ),
                         ),
                       ],
+                    ),
+                    SizedBox(
+                      height: getProportionateScreenHeight(50),
+                    ),
+                    Container(
+                      padding:
+                          EdgeInsets.all(8), // Atur padding sesuai kebutuhan
+                      decoration: BoxDecoration(
+                        color: yellowColor, // Atur warna background box
+                        borderRadius:
+                            BorderRadius.circular(5), // Atur radius border box
+                      ),
+                      width: getProportionateScreenWidth(400),
+
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Disclaimer',
+                            style: opensansTextStyle.copyWith(
+                              fontSize: getProportionateScreenWidth(15),
+                              fontWeight: weightBold,
+                            ),
+                          ),
+                          Text(
+                            widget.disclaimeringgris,
+                            style: opensansTextStyle.copyWith(
+                              fontSize: getProportionateScreenWidth(13),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

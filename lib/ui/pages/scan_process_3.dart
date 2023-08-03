@@ -98,6 +98,10 @@ class _ScanProcess3State extends State<ScanProcess3> {
                     '\n1.Irritation of the hair follicles. \n2.Excess oil production. \n3. Buildup of Propionibacterium acnes bacteria on the skin. \n4.Hormonal changes, such as during menstruation or due to taking birth control pills or certain medications.',
                 perawataninggris:
                     '\n1.Choose skincare products with salicylic acid to treat blackheads and clear the skin. \n2.Use a retinoid cream or lotion to treat blackheads and rejuvenate the skin. Use this product before bed for optimal results. \n3.Perform chemical peels using ingredients such as salicylic acid, glycolic acid, or retinoic acid to remove blackheads and rejuvenate the skin by exfoliating the top layer of skin. \n4.Laser therapy uses a laser to reduce oil production and kill bacteria on the skin, without damaging the top layer of skin.',
+                disclaimer:
+                    'Konsultasikan dengan dokter untuk perawatan kesehatan yang tepat.',
+                disclaimeringgris:
+                    'Consult a doctor for informed health decisions.',
               )
             : (widget.pred![0]['label'] == label[1])
                 ? ScanProcess3Detail(
@@ -115,6 +119,10 @@ class _ScanProcess3State extends State<ScanProcess3> {
                         '\n1.Excessive sweating, such as in people with hyperhidrosis. \n2.Using cosmetics or skincare products that clog pores, such as oil-based ones. \n3.Having a family member who is also prone to acne nodules. \n4.Experiencing hormonal changes such as during puberty, menstruation, pregnancy, and menopause. \n5.Taking certain types of medications, such as corticosteroid drugs. Experiencing stress or anxiety.',
                     perawataninggris:
                         'To treat acne nodules, you will need medical treatment from a dermatologist. Here are the types of treatment that can be given by a doctor: \n\n1.Acne ointment contains salicylic acid, benzoyl peroxide, retinoids, and antibiotics. \n2.Widespread acne nodules are treated with antibiotics to reduce P. acne bacteria and inflammation. Examples of antibiotics prescribed are doxycycline, erythromycin, and minocycline. \n3.Birth control pills are effective for treating acne nodules associated with hormonal changes before menstruation. The synthetic hormones in birth control pills reduce skin oil production, reducing the risk of acne nodules. \n4.Isotretinoin, a vitamin A-derived topical medication, is used if previous treatments have not worked. It helps to eradicate bacteria, reduce excess oil production, prevent clogged pores, and reduce inflammation in acne nodules. \n5.Doctors may inject corticosteroids into large, hard-to-remove acne nodules. These injections help reduce inflammation and speed up the healing of acne nodules. \n6.Facial lasers can reduce acne nodules and pockmarks with a special beam. Treatment can be done in combination for optimal results.',
+                    disclaimer:
+                        'Konsultasikan dengan dokter untuk perawatan kesehatan yang tepat.',
+                    disclaimeringgris:
+                        'Consult a doctor for informed health decisions.',
                   )
                 : (widget.pred![0]['label'] == label[2])
                     ? ScanProcess3DetailNormalface(
@@ -132,6 +140,14 @@ class _ScanProcess3State extends State<ScanProcess3> {
                             '\n1.Genetics \n2.Oil production balance, producing enough oil to keep the skin moisturized without making it too oily. \n3.Natural moisture can keep the skin well moisturized without being too dry or too moist. \n4.Proper care. \n5.Cleaning the face regularly, using an appropriate moisturizer, and protecting the skin from the sun can help maintain the normal state of facial skin. \n6. A healthy lifestyle such as a balanced diet, adequate sleep, and avoiding excessive stress.',
                         perawataninggris:
                             '\n1.Neither too oily nor too dry. \n2.There are no noticeable skin problems such as acne or inflammation. \n3.Skin shafts look small and unclogged. \n4.The skin feels soft and supple. \n5.Skin color is even without spots or excessive redness. \n6.There are no significant sensitivity issues to products or external stimuli.',
+                        disclaimer:
+                            'Konsultasikan dengan dokter untuk perawatan kesehatan yang tepat.',
+                        disclaimeringgris:
+                            'Consult a doctor for informed health decisions.',
+                        tips:
+                            '\n1.Rutin membersihkan wajah dua kali sehari untuk menghilangkan kotoran dan minyak. \n2.Hindari menyentuh wajah dengan tangan kotor. \n3.Hindari pemakaian kosmetik berlebihan. \n4.Gunakan pelembap sesuai jenis kulit Anda. \n5.Konsumsi makanan sehat seperti buah-buahan dan sayuran. \n6.Hindari stres berlebihan. \n7.Gunakan produk Anti-Jerawat cari produk dengan asam salisilat atau tea tree oil. \n8.Jangan memencet jerawat untuk menghindari peradangan.',
+                        tipsinggris:
+                            '\n1.Clean your face twice a day to remove dirt and oil. \n2.Avoid touching your face with dirty hands. \n3.Avoid wearing excessive cosmetics. \n4.Use moisturizer according to your skin type. \n5.Consume healthy foods such as fruits and vegetables. \n6.Avoid excessive stress. \n7.Use anti-acne products, look for products with salicylic acid or tea tree oil. \n8.Do not squeeze pimples to avoid inflammation.',
                       )
                     : (widget.pred![0]['label'] == label[3])
                         ? ScanProcess3Detail(
@@ -142,13 +158,17 @@ class _ScanProcess3State extends State<ScanProcess3> {
                                 'Papules are pimples that are prominent, small, dense, reddish in appearance, and do not contain pus. Although not a serious condition, these pimples can be a nuisance. Just like acne in general, acne papules appear due to blockage and inflammation in the pores of the face. These pimples are characterized by the appearance of solid lumps less than 1 cm in size.',
                             penyakit: 'papula',
                             penyebab:
-                                '\n1.Pengaruh hormonal \n1.Infeksi bakteri Propionibacterium acnes di permukaan kulit akibat pori-pori tersumbat. \n2.Produksi minyak di wajah yang berlebih. \n3.Penyumbatan di folikel rambut dan kelenjar minyak. \n4.Terlalu banyak konsumsi makanan manis. \n5.Stres',
+                                '\n1.Pengaruh hormonal \n2.Produksi minyak di wajah yang berlebih. \n3.Penyumbatan di folikel rambut dan kelenjar minyak. \n4.Terlalu banyak konsumsi makanan manis. \n5.Stres  \n6.Infeksi bakteri Propionibacterium acnes di permukaan kulit akibat pori-pori tersumbat. ',
                             perawatan:
                                 '\n1.Cuci wajah dan tubuh secara rutin untuk mengatasi jerawat papula. Hindari mencuci wajah terlalu sering agar tidak iritasi. \n2.Jangan menyentuh atau memecahkan jerawat papula. Tindakan tersebut bisa memperburuk peradangan dan meninggalkan bekas luka. \n3.Hindari penggunaan losion dan make-up pada area jerawat. Gunakan produk yang sudah teruji dan cocok untuk kulit Anda. \n4.Bersihkan rambut secara rutin dan hindari model rambut berponi.',
                             penyebabinggris:
-                                '\n1.Infection of Propionibacterium acnes bacteria on the skin surface due to clogged pores. \n2.Excessive oil production on the face. \n3.Blockage in hair follicles and oil glands. \n4.Consumption of too many sweets. \n5.Stress',
+                                '\n1.Hormonal influence \n2.Excessive oil production on the face. \n3.Blockage in hair follicles and oil glands. \n4.Consumption of too many sweets. \n5.Stress \n6.Infection of Propionibacterium acnes bacteria on the skin surface due to clogged pores.',
                             perawataninggris:
                                 '\n1.Wash your face and body regularly to treat acne papules. Avoid washing your face too often to avoid irritation. \n2.Do not touch or break the papules. Doing so can worsen inflammation and leave scars. \n3.Avoid using lotions and make-up on the acne area. Use products that have been tested and are suitable for your skin. \n4.Clean your hair regularly and avoid bangs.',
+                            disclaimer:
+                                'Konsultasikan dengan dokter untuk perawatan kesehatan yang tepat.',
+                            disclaimeringgris:
+                                'Consult a doctor for informed health decisions.',
                           )
                         : ScanProcess3Detail(
                             image: widget.image,
@@ -165,6 +185,10 @@ class _ScanProcess3State extends State<ScanProcess3> {
                                 '\n1.Lack of skin hygiene. \n2.Using oil-based cosmetics that clog pores. \n3.Eating foods high in sugar. \n4.Taking certain medications, including corticosteroids. Smoking. \n5.Suffering from stress. \n6.Having family members with similar complaints or due to genetic factors',
                             perawataninggris:
                                 'To get rid of acne pustules faster, there are several ways you can do: \n\n1.Acne ointment contains salicylic acid, benzoyl peroxide, retinoids, and antibiotics. These ointments are used to treat mild to moderate acne. For severe acne, consult a doctor. \n2.If the acne does not improve after using ointments, the doctor may prescribe over-the-counter acne medications, such as antibiotics or isotretinoin, depending on the severity of the acne. \n3.Phototherapy uses a special light to treat hard-to-treat pustular acne. This method kills acne-causing bacteria and reduces oil production.',
+                            disclaimer:
+                                'Konsultasikan dengan dokter untuk perawatan kesehatan yang tepat.',
+                            disclaimeringgris:
+                                'Consult a doctor for informed health decisions.',
                           ),
       ),
     );

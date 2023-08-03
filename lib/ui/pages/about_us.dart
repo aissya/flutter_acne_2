@@ -208,7 +208,7 @@ class _AboutUsScreenPageState extends State<AboutUsScreenPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AboutUsWidget(
-                        image: 'assets/icon_home.png',
+                        image: 'assets/foto_pak_handoko.jpeg',
                         name: 'Slamet Handoko,\n S. Kom., M. Kom.\n',
                         info: 'NIP. 197501302001121001',
                       ),
