@@ -99,9 +99,9 @@ class _ScanProcess3State extends State<ScanProcess3> {
                 perawataninggris:
                     '\n1.Choose skincare products with salicylic acid to treat blackheads and clear the skin. \n2.Use a retinoid cream or lotion to treat blackheads and rejuvenate the skin. Use this product before bed for optimal results. \n3.Perform chemical peels using ingredients such as salicylic acid, glycolic acid, or retinoic acid to remove blackheads and rejuvenate the skin by exfoliating the top layer of skin. \n4.Laser therapy uses a laser to reduce oil production and kill bacteria on the skin, without damaging the top layer of skin.',
                 disclaimer:
-                    'Konsultasikan dengan dokter untuk perawatan kesehatan yang tepat.',
+                    'Hasil yang didapatkan hanyalah sebuah prediksi. Konsultasikan dengan dokter untuk perawatan kulit wajah yang tepat.',
                 disclaimeringgris:
-                    'Consult a doctor for informed health decisions.',
+                    'The results obtained are only a prediction. Consult a doctor for proper facial skin treatment.',
               )
             : (widget.pred![0]['label'] == label[1])
                 ? ScanProcess3Detail(
@@ -120,9 +120,9 @@ class _ScanProcess3State extends State<ScanProcess3> {
                     perawataninggris:
                         'To treat acne nodules, you will need medical treatment from a dermatologist. Here are the types of treatment that can be given by a doctor: \n\n1.Acne ointment contains salicylic acid, benzoyl peroxide, retinoids, and antibiotics. \n2.Widespread acne nodules are treated with antibiotics to reduce P. acne bacteria and inflammation. Examples of antibiotics prescribed are doxycycline, erythromycin, and minocycline. \n3.Birth control pills are effective for treating acne nodules associated with hormonal changes before menstruation. The synthetic hormones in birth control pills reduce skin oil production, reducing the risk of acne nodules. \n4.Isotretinoin, a vitamin A-derived topical medication, is used if previous treatments have not worked. It helps to eradicate bacteria, reduce excess oil production, prevent clogged pores, and reduce inflammation in acne nodules. \n5.Doctors may inject corticosteroids into large, hard-to-remove acne nodules. These injections help reduce inflammation and speed up the healing of acne nodules. \n6.Facial lasers can reduce acne nodules and pockmarks with a special beam. Treatment can be done in combination for optimal results.',
                     disclaimer:
-                        'Konsultasikan dengan dokter untuk perawatan kesehatan yang tepat.',
+                        'Hasil yang didapatkan hanyalah sebuah prediksi. Konsultasikan dengan dokter untuk perawatan kulit wajah yang tepat.',
                     disclaimeringgris:
-                        'Consult a doctor for informed health decisions.',
+                        'The results obtained are only a prediction. Consult a doctor for proper facial skin treatment.',
                   )
                 : (widget.pred![0]['label'] == label[2])
                     ? ScanProcess3DetailNormalface(
@@ -141,9 +141,9 @@ class _ScanProcess3State extends State<ScanProcess3> {
                         perawataninggris:
                             '\n1.Neither too oily nor too dry. \n2.There are no noticeable skin problems such as acne or inflammation. \n3.Skin shafts look small and unclogged. \n4.The skin feels soft and supple. \n5.Skin color is even without spots or excessive redness. \n6.There are no significant sensitivity issues to products or external stimuli.',
                         disclaimer:
-                            'Konsultasikan dengan dokter untuk perawatan kesehatan yang tepat.',
+                            'Hasil yang didapatkan hanyalah sebuah prediksi. Konsultasikan dengan dokter untuk perawatan kulit wajah yang tepat.',
                         disclaimeringgris:
-                            'Consult a doctor for informed health decisions.',
+                            'The results obtained are only a prediction. Consult a doctor for proper facial skin treatment.',
                         tips:
                             '\n1.Rutin membersihkan wajah dua kali sehari untuk menghilangkan kotoran dan minyak. \n2.Hindari menyentuh wajah dengan tangan kotor. \n3.Hindari pemakaian kosmetik berlebihan. \n4.Gunakan pelembap sesuai jenis kulit Anda. \n5.Konsumsi makanan sehat seperti buah-buahan dan sayuran. \n6.Hindari stres berlebihan. \n7.Gunakan produk Anti-Jerawat cari produk dengan asam salisilat atau tea tree oil. \n8.Jangan memencet jerawat untuk menghindari peradangan.',
                         tipsinggris:
@@ -166,9 +166,9 @@ class _ScanProcess3State extends State<ScanProcess3> {
                             perawataninggris:
                                 '\n1.Wash your face and body regularly to treat acne papules. Avoid washing your face too often to avoid irritation. \n2.Do not touch or break the papules. Doing so can worsen inflammation and leave scars. \n3.Avoid using lotions and make-up on the acne area. Use products that have been tested and are suitable for your skin. \n4.Clean your hair regularly and avoid bangs.',
                             disclaimer:
-                                'Konsultasikan dengan dokter untuk perawatan kesehatan yang tepat.',
+                                'Hasil yang didapatkan hanyalah sebuah prediksi. Konsultasikan dengan dokter untuk perawatan kulit wajah yang tepat.',
                             disclaimeringgris:
-                                'Consult a doctor for informed health decisions.',
+                                'The results obtained are only a prediction. Consult a doctor for proper facial skin treatment.',
                           )
                         : ScanProcess3Detail(
                             image: widget.image,
@@ -186,9 +186,9 @@ class _ScanProcess3State extends State<ScanProcess3> {
                             perawataninggris:
                                 'To get rid of acne pustules faster, there are several ways you can do: \n\n1.Acne ointment contains salicylic acid, benzoyl peroxide, retinoids, and antibiotics. These ointments are used to treat mild to moderate acne. For severe acne, consult a doctor. \n2.If the acne does not improve after using ointments, the doctor may prescribe over-the-counter acne medications, such as antibiotics or isotretinoin, depending on the severity of the acne. \n3.Phototherapy uses a special light to treat hard-to-treat pustular acne. This method kills acne-causing bacteria and reduces oil production.',
                             disclaimer:
-                                'Konsultasikan dengan dokter untuk perawatan kesehatan yang tepat.',
+                                'Hasil yang didapatkan hanyalah sebuah prediksi. Konsultasikan dengan dokter untuk perawatan kulit wajah yang tepat.',
                             disclaimeringgris:
-                                'Consult a doctor for informed health decisions.',
+                                'The results obtained are only a prediction. Consult a doctor for proper facial skin treatment.',
                           ),
       ),
     );
